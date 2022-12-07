@@ -141,6 +141,8 @@ int	ft_movement(int key_code, t_game *game)
 	int	i;
 
 	i = 0;
+	if (key_code == ESC)
+		ft_close(game);
 	if (game->flag == 1)
 		return (1);
 	if (game->map->str_map[game->map->player] == 'E')
@@ -153,7 +155,5 @@ int	ft_movement(int key_code, t_game *game)
 		ft_move_up(game, i);
 	if (key_code == DOWN_KEY || key_code == S_KEY)
 		ft_move_down(game, i);
-	if (key_code == ESC)
-		ft_close(game);
 	return (0);
 }
